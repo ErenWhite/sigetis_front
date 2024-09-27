@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
-const endPoint = 'http://localhost:8000/api/historia_usuario'; // Ajusta la URL según tu configuración
+const endPoint = 'http://localhost:8000/api/historia_usuario';
 
 function AgregarHU({ newTask, setNewTask }) {
   const handleTitleChange = (event) => {
@@ -21,7 +21,7 @@ function AgregarHU({ newTask, setNewTask }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Crear un objeto FormData para enviar imágenes y otros datos
+    
     const formData = new FormData();
     formData.append('titulo_hu', newTask.title);
     formData.append('descripcion_hu', newTask.description);
@@ -36,10 +36,10 @@ function AgregarHU({ newTask, setNewTask }) {
         },
       });
       console.log('Tarea guardada:', response.data);
-      // Puedes agregar lógica adicional aquí, como limpiar el estado o mostrar un mensaje de éxito
+      
     } catch (error) {
       console.error('Error al guardar la tarea:', error.response.data);
-      // Manejo de errores aquí
+      
     }
   };
 
