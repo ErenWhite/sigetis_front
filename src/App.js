@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HistoriaHU from './components/CreacionAct/HistoriaHU';
+import DetalleHistoria from './components/CreacionAct/DetalleHistoria';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/historiaHU" element={<HistoriaHU />} />
+          <Route path="/detalle/:id" element={<DetalleHistoria />} />
+
+        </Routes>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
